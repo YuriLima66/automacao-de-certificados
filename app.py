@@ -25,22 +25,22 @@ for indice, linha in enumerate(sheet_alunos.iter_rows(max_row=2)):
         data_emissao = data_emissao.strftime('%d/%m/%Y')
 
     # Definir as fontes a serem usadas
-    fonte_nome = ImageFont.truetype('./BOD_PSTC.ttf', 90)
-    fonte_geral = ImageFont.truetype('./BOD_PSTC.ttf', 80)
-    fonte_data = ImageFont.truetype('./BOD_PSTC.ttf', 55)
+    fonte_nome = ImageFont.truetype('./BERNHC.ttf', 40)
+    fonte_geral = ImageFont.truetype('./BERNHC.ttf', 40)
+    fonte_data = ImageFont.truetype('./BERNHC.ttf', 40)
 
     # Abrir a imagem do certificado
-    image = Image.open('./certificado_padrao.jpg')
+    image = Image.open('certificado_padrao.jpeg')
     desenhar = ImageDraw.Draw(image)
 
     # Adicionar os dados do participante ao certificado
-    desenhar.text((400, 400), nome_participante, fill='black', font=fonte_nome)
-    desenhar.text((250, 250), nome_curso, fill='black', font=fonte_geral)
-    desenhar.text((300, 300), tipo_participacao, fill='black', font=fonte_geral)
-    desenhar.text((500, 500), str(carga_horaria), fill='black', font=fonte_geral)
-    desenhar.text((650, 700), str(data_inicio), fill='blue', font=fonte_data)
-    desenhar.text((850, 700), str(data_final), fill='blue', font=fonte_data)
-    desenhar.text((100, 100), str(data_emissao), fill='blue', font=fonte_data)
+    desenhar.text((480, 380), nome_participante, fill='black', font=fonte_nome)
+    desenhar.text((480, 430), nome_curso, fill='black', font=fonte_geral)
+    desenhar.text((600, 490), tipo_participacao, fill='black', font=fonte_geral)
+    desenhar.text((620, 545), str(carga_horaria), fill='black', font=fonte_geral)
+    desenhar.text((260, 825), str(data_inicio), fill='blue', font=fonte_data)
+    desenhar.text((260, 900), str(data_final), fill='blue', font=fonte_data)
+    desenhar.text((480, 1010), str(data_emissao), fill='blue', font=fonte_data)
 
     # Salvar o certificado com um nome único
     image.save(f'./{indice}_{nome_participante}_certificado.png')
