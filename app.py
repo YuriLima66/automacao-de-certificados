@@ -6,7 +6,7 @@ workbook_alunos = openpyxl.load_workbook('planilha_alunos.xlsx')  # Carregar a p
 sheet_alunos = workbook_alunos['Sheet1']  # Selecionar a aba da planilha
 
 # Iterar sobre as linhas da planilha
-for indice, linha in enumerate(sheet_alunos.iter_rows(max_row=2)):
+for indice, linha in enumerate(sheet_alunos.iter_rows(max_row=99)):
     # Extrair os dados de cada célula
     nome_curso = linha[0].value
     nome_participante = linha[1].value
